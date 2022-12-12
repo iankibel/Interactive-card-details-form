@@ -1,0 +1,268 @@
+/**************************** Fonts ***************************/
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+/**************************** Root ***************************/
+:root {
+    /* Primary */
+    --Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+    --Red: hsl(0, 100%, 66%);
+
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+
+    /* Font */
+    --Font: 'Space Grotesk', sans-serif;
+}
+
+/**************************** Reset ***************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/**************************** General Styles ***************************/
+body {
+    background-color: var(--White);
+}
+
+main {
+    background-image: url(./assets/bg-main-mobile.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
+    padding-bottom: 2rem;
+}
+
+.card {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    max-width: 100%;
+    
+}
+
+.card-front {
+    align-self: flex-start;
+    max-width: 85%;
+    order: 2;
+    margin-top: -4rem;
+    z-index: 1;
+    position: relative;
+}
+
+.card-front-data {
+    position: absolute;
+    inset: 0;
+    color: var(--White);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.4rem;
+    /* justify-content: space-between; */
+    font-size: .9rem;
+    gap: 3rem;
+}
+
+.card-number {
+    letter-spacing: 3px;
+    font-size: 1.3rem;
+}
+
+.card-front-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.card-front-data img {
+    max-width: 4rem;
+}
+
+.card-name-date {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.card-back {
+    align-self: flex-end;
+    max-width: 85%;
+    order: 1;
+    position: relative;
+}
+
+.card-back-data {
+    position: absolute;
+    inset: 0;
+    color: var(--White);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 11%;
+    padding-bottom: 2.5%;
+    font-size: .9rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    padding-top: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.form-group-2 > div {
+    width: 50%;
+}
+
+.columns {
+    display: flex;
+    gap: .5rem;
+}
+
+.columns input {
+    width: 100%;
+}
+
+.rows {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    border: 1px solid var(--Light-grayish-violet);
+    padding: .75rem;
+    border-radius: .5rem;
+}
+
+input::placeholder {
+    color: var(--Light-grayish-violet);
+}
+
+.label {
+    text-transform: uppercase;
+    font-size: .85rem;
+    letter-spacing: 1.2px;
+    color: var(--Very-dark-violet);
+    margin-bottom: .25rem;
+}
+
+.btn-confirm {
+    background-color: var(--Very-dark-violet);
+    color: var(--White);
+    font-size: 1rem;
+    padding-block: .75rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+.thank-you {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.thank-you-title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.thank-you-text {
+    color: var(--Dark-grayish-violet);
+}
+
+.thank-you button {
+    width: 70%;
+}
+
+@media screen and (min-width: 800px){
+    main {
+        background-image: url(./assets/bg-main-desktop.png);
+        background-position: left;
+        background-size: auto 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100vh;
+    }
+
+    .card {
+        padding: 6rem 9rem;
+        gap: 2rem;
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+    .card-front {
+        order: 1;
+        margin-top: 0;
+    }
+
+    .card-back {
+        order: 2;
+    }
+
+    .form {
+        width: 70%;
+        
+    }
+
+    .form-container {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .card-front-data {
+        gap: 5rem;
+    }
+
+    .card-front-info {
+        gap: 2rem;
+    }
+
+    .thank-you {
+        width: 30rem;
+        gap: 2rem;
+    }
+
+    .thank-you-title {
+        font-size: 3rem;
+    }
+
+    .thank-you-text {
+        font-size: 1.5rem;
+    }
+    
+    .thank-you button {
+        width: 80%;
+        font-size: 1.7rem;
+    }
+}
+
+.disabled {
+    display: none;
+}
